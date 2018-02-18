@@ -6,6 +6,22 @@ part 'block.dart';
 part 'headings.dart';
 part 'text_formatting.dart';
 
+List flat(children1, [children2, children3, children4]) {
+  final children = [children1, children2, children3];
+
+  final ret = [];
+
+  for (dynamic child in children) {
+    if (child is Iterable) {
+      ret.addAll(child);
+    } else if (child != null) {
+      ret.add(child);
+    }
+  }
+
+  return ret;
+}
+
 /// Creates a <span> Element.
 Element span({
   /* List<Setter> | Setter */ set,
@@ -17,7 +33,7 @@ Element span({
   dynamic key,
 }) =>
     new Element(
-      'div',
+      'span',
       set: set,
       attrs: attrs,
       styles: styles,

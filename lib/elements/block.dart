@@ -9,6 +9,9 @@ Element div({
   /* List, Component, Node, BuildFn, ... */ dynamic content,
   Map<String, EventHandler> on,
   dynamic key,
+  AfterCallback afterInsert,
+  AfterCallback afterUpdate,
+  AfterCallback afterRemove,
 }) =>
     new Element(
       'div',
@@ -19,6 +22,9 @@ Element div({
       content: content,
       events: on,
       key: key,
+      afterInsert: afterInsert,
+      afterUpdate: afterUpdate,
+      afterRemove: afterRemove,
     );
 
 /// Creates a <p> Element.
