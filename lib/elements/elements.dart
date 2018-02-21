@@ -23,6 +23,25 @@ List flat(children1, [children2, children3, children4]) {
 }
 
 /// Creates a <span> Element.
+Element textInput({
+  /* List<Setter> | Setter */ set,
+  Map<String, String> attrs,
+  Map<String, String> styles,
+  List<String> classes,
+  Map<String, EventHandler> on,
+  dynamic key,
+}) =>
+    new Element(
+      'input',
+      set: set,
+      attrs: (attrs ?? {})..['type'] = 'text',
+      styles: styles,
+      classes: classes,
+      events: on,
+      key: key,
+    );
+
+/// Creates a <span> Element.
 Element span({
   /* List<Setter> | Setter */ set,
   Map<String, String> attrs,
