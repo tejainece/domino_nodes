@@ -30,6 +30,9 @@ Element textInput({
   List<String> classes,
   Map<String, EventHandler> on,
   dynamic key,
+  AfterCallback afterInsert,
+  AfterCallback afterUpdate,
+  AfterCallback afterRemove,
 }) =>
     new Element(
       'input',
@@ -39,6 +42,9 @@ Element textInput({
       classes: classes,
       events: on,
       key: key,
+      afterInsert: afterInsert,
+      afterUpdate: afterUpdate,
+      afterRemove: afterRemove,
     );
 
 /// Creates a <span> Element.
