@@ -12,3 +12,5 @@ dynamic when(condition, result) {
   }
   return null;
 }
+
+List foreach<E>(List<E> list, build(E e)) => list.map(build).toList();
