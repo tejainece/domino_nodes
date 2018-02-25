@@ -1,98 +1,33 @@
 library domino.nodes.elements;
 
 import 'package:domino/domino.dart';
+import 'package:domino_nodes/domino_nodes.dart';
 
 part 'block.dart';
 part 'headings.dart';
 part 'text_formatting.dart';
 
-List flat(children1, [children2, children3, children4]) {
-  final children = [children1, children2, children3];
-
-  final ret = [];
-
-  for (dynamic child in children) {
-    if (child is Iterable) {
-      ret.addAll(child);
-    } else if (child != null) {
-      ret.add(child);
-    }
-  }
-
-  return ret;
-}
+/// Creates a <span> Element.
+Element textInput([content]) =>
+    new Element('input', (content ?? [])..add(attr('type', 'text')));
 
 /// Creates a <span> Element.
-Element textInput({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  Map<String, EventHandler> on,
-  dynamic key,
-  AfterCallback afterInsert,
-  AfterCallback afterUpdate,
-  AfterCallback afterRemove,
-}) =>
-    new Element(
-      'input',
-      set: set,
-      attrs: (attrs ?? {})..['type'] = 'text',
-      styles: styles,
-      classes: classes,
-      events: on,
-      key: key,
-      afterInsert: afterInsert,
-      afterUpdate: afterUpdate,
-      afterRemove: afterRemove,
-    );
+Element textInputWhen(/* bool | BoolFunction */ condition, [content]) =>
+    new Element('input', (content ?? [])..add(attr('type', 'text')));
 
 /// Creates a <span> Element.
-Element span({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'span',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element span([content]) => new Element('span', content);
 
 /// Creates a <a> Element.
 Element a({
   String href,
   String target,
-  String id,
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
+  content,
 }) =>
     new Element(
       'a',
-      set: set,
-      attrs: (attrs ?? <String, String>{})
-        ..['href'] = href
-        ..['target'] = target
-        ..['id'] = id,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
+      flat(content, when(href != null, attr('href', href)),
+          when(target != null, attr('target', target))),
     );
 
 /// Creates a <img> Element.
@@ -101,67 +36,23 @@ Element img({
   String alt,
   /* int | String */ width,
   /* int | String */ height,
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
+  content,
 }) =>
     new Element(
       'img',
-      set: set,
-      attrs: (attrs ?? <String, String>{})
-        ..['src'] = src
-        ..['alt'] = alt
-        ..['width'] = width?.toString()
-        ..['height'] = height?.toString(),
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
+      flat(
+          content,
+          when(src != null, attr('src', src)),
+          when(alt != null, attr('alt', alt)),
+          when(width != null, attr('width', width is int ? '$width' : width)),
+          when(height != null,
+              attr('height', height is int ? '$height' : height))),
     );
 
 /// Creates a <button> Element.
-Element button({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'div',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element button([content]) => new Element('div', content);
 
-Element br() => new Element('br');
+Element br([content]) => new Element('br', content);
 
 /// Creates a <hr> Element.
-Element hr({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'hr',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      events: on,
-      key: key,
-    );
+Element hr([content]) => new Element('hr', content);

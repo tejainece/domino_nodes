@@ -1,211 +1,31 @@
 part of domino.nodes.elements;
 
 /// Creates a <b> Element.
-Element b({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'b',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element b([content]) => new Element('b', content);
 
 /// Creates a <em> Element.
-Element em({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'em',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element em([content]) => new Element('em', content);
 
 /// Creates a <i> Element.
-Element i({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'i',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element i([content]) => new Element('i', content);
 
 /// Creates a <small> Element.
-Element small({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'small',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element small([content]) => new Element('small', content);
 
 /// Creates a <strong> Element.
-Element strong({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'strong',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element strong([content]) => new Element('strong', content);
 
 /// Creates a <sub> Element.
-Element sub({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'sub',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element sub([content]) => new Element('sub', content);
 
 /// Creates a <sup> Element.
-Element sup({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'sup',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element sup([content]) => new Element('sup', content);
 
 /// Creates a <ins> Element.
-Element ins({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'ins',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element ins([content]) => new Element('ins', content);
 
 /// Creates a <del> Element.
-Element del({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'del',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element del([content]) => new Element('del', content);
 
 /// Creates a <mark> Element.
-Element mark({
-  /* List<Setter> | Setter */ set,
-  Map<String, String> attrs,
-  Map<String, String> styles,
-  List<String> classes,
-  /* List, Component, Node, BuildFn, ... */ dynamic content,
-  Map<String, EventHandler> on,
-  dynamic key,
-}) =>
-    new Element(
-      'mark',
-      set: set,
-      attrs: attrs,
-      styles: styles,
-      classes: classes,
-      content: content,
-      events: on,
-      key: key,
-    );
+Element mark([content]) => new Element('mark', content);

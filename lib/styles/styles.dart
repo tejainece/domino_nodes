@@ -1,154 +1,133 @@
 library domino.nodes.styles;
 
-import 'package:domino/setters.dart';
+import 'package:domino/domino.dart';
 
-StyleSetter bgColor(String color) => style('background-color', color);
+Setter bgColor(String color) => style('background-color', color);
 
-StyleSetter color(String color) => style('color', color);
+Setter color(String color) => style('color', color);
 
-StyleSetter fontSize(int size, [String unit = 'px']) =>
+Setter fontSize(int size, [String unit = 'px']) =>
     style('font-size', '$size$unit');
 
-StyleSetter fontWeight(String weight) => style('font-weight', weight);
+Setter fontWeight(String weight) => style('font-weight', weight);
 
-StyleSetter width(int size, [String unit = 'px']) =>
-    style('width', '$size$unit');
+Setter width(int size, [String unit = 'px']) => style('width', '$size$unit');
 
-StyleSetter height(int size, [String unit = 'px']) =>
-    style('height', '$size$unit');
+Setter height(int size, [String unit = 'px']) => style('height', '$size$unit');
 
-StyleSetter margin(String value) => style('margin', value);
+Setter margin(String value) => style('margin', value);
 
-StyleSetter padding(String value) => style('padding', value);
+Setter padding(String value) => style('padding', value);
 
-StyleSetter flex([String value = 'auto']) => style('flex', value);
+Setter flex([String value = 'auto']) => style('flex', value);
 
-StyleSetter border() => style('border', '3px');
+Setter border() => style('border', '3px');
 
-StyleSetter borderRadius(String value) => style('border-radius', value);
+Setter borderRadius(String value) => style('border-radius', value);
 
 class Display {
-  static const StyleSetter inline = const StyleSetter('display', 'inline');
+  static Setter get inline => style('display', 'inline');
 
-  static const StyleSetter block = const StyleSetter('display', 'block');
+  static Setter get block => style('display', 'block');
 
-  static const StyleSetter flex = const StyleSetter('display', 'flex');
+  static Setter get flex => style('display', 'flex');
 
-  static const StyleSetter inlineBlock =
-      const StyleSetter('display', 'inline-block');
+  static Setter get inlineBlock => style('display', 'inline-block');
 
-  static const StyleSetter inlineFlex =
-      const StyleSetter('display', 'inline-flex');
+  static Setter get inlineFlex => style('display', 'inline-flex');
 
-  static const StyleSetter inlineTable =
-      const StyleSetter('display', 'inline-table');
+  static Setter get inlineTable => style('display', 'inline-table');
 
-  static const StyleSetter listItem = const StyleSetter('display', 'list-item');
+  static Setter get listItem => style('display', 'list-item');
 
-  static const StyleSetter runIn = const StyleSetter('display', 'run-in');
+  static Setter get runIn => style('display', 'run-in');
 
-  static const StyleSetter table = const StyleSetter('display', 'table');
+  static Setter get table => style('display', 'table');
 
-  static const StyleSetter none = const StyleSetter('display', 'none');
+  static Setter get none => style('display', 'none');
 }
 
 class FlexDirection {
-  static const StyleSetter row = const StyleSetter('flex-direction', 'row');
+  static Setter get row => style('flex-direction', 'row');
 
-  static const StyleSetter rowReverse =
-      const StyleSetter('flex-direction', 'row-reverse');
+  static Setter get rowReverse => style('flex-direction', 'row-reverse');
 
-  static const StyleSetter column =
-      const StyleSetter('flex-direction', 'column');
+  static Setter get column => style('flex-direction', 'column');
 
-  static const StyleSetter columnReverse =
-      const StyleSetter('flex-direction', 'column-reverse');
+  static Setter get columnReverse => style('flex-direction', 'column-reverse');
 
-  static const StyleSetter initial =
-      const StyleSetter('flex-direction', 'initial');
+  static Setter get initial => style('flex-direction', 'initial');
 
-  static const StyleSetter inherit =
-      const StyleSetter('flex-direction', 'inherit');
+  static Setter get inherit => style('flex-direction', 'inherit');
 }
 
 class TextAlign {
-  static const StyleSetter left = const StyleSetter('text-align', 'left');
+  static Setter get left => style('text-align', 'left');
 
-  static const StyleSetter right = const StyleSetter('text-align', 'right');
+  static Setter get right => style('text-align', 'right');
 
-  static const StyleSetter center = const StyleSetter('text-align', 'center');
+  static Setter get center => style('text-align', 'center');
 
-  static const StyleSetter justify = const StyleSetter('text-align', 'justify');
+  static Setter get justify => style('text-align', 'justify');
 
-  static const StyleSetter initial = const StyleSetter('text-align', 'initial');
+  static Setter get initial => style('text-align', 'initial');
 
-  static const StyleSetter inherit = const StyleSetter('text-align', 'inherit');
+  static Setter get inherit => style('text-align', 'inherit');
 }
 
 class UserSelect {
-  static const StyleSetter none = const StyleSetter('user-select', 'none');
+  static Setter get none => style('user-select', 'none');
 
-  static const StyleSetter auto = const StyleSetter('user-select', 'auto');
+  static Setter get auto => style('user-select', 'auto');
 
-  static const StyleSetter text = const StyleSetter('user-select', 'text');
+  static Setter get text => style('user-select', 'text');
 
-  static const StyleSetter contain =
-      const StyleSetter('user-select', 'contain');
+  static Setter get contain => style('user-select', 'contain');
 
-  static const StyleSetter all = const StyleSetter('user-select', 'all');
+  static Setter get all => style('user-select', 'all');
 
-  static const StyleSetter initial =
-      const StyleSetter('user-select', 'initial');
+  static Setter get initial => style('user-select', 'initial');
 
-  static const StyleSetter inherit =
-      const StyleSetter('user-select', 'inherit');
+  static Setter get inherit => style('user-select', 'inherit');
 
-  static const StyleSetter unset = const StyleSetter('user-select', 'unset');
+  static Setter get unset => style('user-select', 'unset');
 }
 
 class Cursor {
-  static const StyleSetter auto = const StyleSetter('cursor', 'auto');
-  static const StyleSetter def = const StyleSetter('cursor', 'def');
-  static const StyleSetter none = const StyleSetter('cursor', 'none');
-  static const StyleSetter contextMenu =
-      const StyleSetter('cursor', 'context-menu');
-  static const StyleSetter help = const StyleSetter('cursor', 'help');
-  static const StyleSetter pointer = const StyleSetter('cursor', 'pointer');
-  static const StyleSetter progress = const StyleSetter('cursor', 'progress');
-  static const StyleSetter wait = const StyleSetter('cursor', 'wait');
-  static const StyleSetter cell = const StyleSetter('cursor', 'cell');
-  static const StyleSetter crosshair = const StyleSetter('cursor', 'crosshair');
-  static const StyleSetter text = const StyleSetter('cursor', 'text');
-  static const StyleSetter verticalText =
-      const StyleSetter('cursor', 'vertical-text');
-  static const StyleSetter alias = const StyleSetter('cursor', 'alias');
-  static const StyleSetter copy = const StyleSetter('cursor', 'copy');
-  static const StyleSetter move = const StyleSetter('cursor', 'move');
-  static const StyleSetter noDrop = const StyleSetter('cursor', 'no-drop');
-  static const StyleSetter notAllowed =
-      const StyleSetter('cursor', 'not-allowed');
-  static const StyleSetter eResize = const StyleSetter('cursor', 'e-resize');
-  static const StyleSetter nResize = const StyleSetter('cursor', 'n-resize');
-  static const StyleSetter neResize = const StyleSetter('cursor', 'ne-resize');
-  static const StyleSetter nwResize = const StyleSetter('cursor', 'nw-resize');
-  static const StyleSetter sResize = const StyleSetter('cursor', 's-resize');
-  static const StyleSetter seResize = const StyleSetter('cursor', 'se-resize');
-  static const StyleSetter swResize = const StyleSetter('cursor', 'sw-resize');
-  static const StyleSetter wResize = const StyleSetter('cursor', 'w-resize');
-  static const StyleSetter ewResize = const StyleSetter('cursor', 'ew-resize');
-  static const StyleSetter nsResize = const StyleSetter('cursor', 'ns-resize');
-  static const StyleSetter neswResize =
-      const StyleSetter('cursor', 'nesw-resize');
-  static const StyleSetter nwseResize =
-      const StyleSetter('cursor', 'nwse-resize');
-  static const StyleSetter colResize =
-      const StyleSetter('cursor', 'col-resize');
-  static const StyleSetter rowResize =
-      const StyleSetter('cursor', 'row-resize');
-  static const StyleSetter allScroll =
-      const StyleSetter('cursor', 'all-scroll');
-  static const StyleSetter zoomIn = const StyleSetter('cursor', 'zoom-in');
-  static const StyleSetter zoomOut = const StyleSetter('cursor', 'zoom-out');
-  static const StyleSetter grab = const StyleSetter('cursor', 'grab');
-  static const StyleSetter grabbing = const StyleSetter('cursor', 'grabbing');
+  static Setter get auto => style('cursor', 'auto');
+  static Setter get def => style('cursor', 'def');
+  static Setter get none => style('cursor', 'none');
+  static Setter get contextMenu => style('cursor', 'context-menu');
+  static Setter get help => style('cursor', 'help');
+  static Setter get pointer => style('cursor', 'pointer');
+  static Setter get progress => style('cursor', 'progress');
+  static Setter get wait => style('cursor', 'wait');
+  static Setter get cell => style('cursor', 'cell');
+  static Setter get crosshair => style('cursor', 'crosshair');
+  static Setter get text => style('cursor', 'text');
+  static Setter get verticalText => style('cursor', 'vertical-text');
+  static Setter get alias => style('cursor', 'alias');
+  static Setter get copy => style('cursor', 'copy');
+  static Setter get move => style('cursor', 'move');
+  static Setter get noDrop => style('cursor', 'no-drop');
+  static Setter get notAllowed => style('cursor', 'not-allowed');
+  static Setter get eResize => style('cursor', 'e-resize');
+  static Setter get nResize => style('cursor', 'n-resize');
+  static Setter get neResize => style('cursor', 'ne-resize');
+  static Setter get nwResize => style('cursor', 'nw-resize');
+  static Setter get sResize => style('cursor', 's-resize');
+  static Setter get seResize => style('cursor', 'se-resize');
+  static Setter get swResize => style('cursor', 'sw-resize');
+  static Setter get wResize => style('cursor', 'w-resize');
+  static Setter get ewResize => style('cursor', 'ew-resize');
+  static Setter get nsResize => style('cursor', 'ns-resize');
+  static Setter get neswResize => style('cursor', 'nesw-resize');
+  static Setter get nwseResize => style('cursor', 'nwse-resize');
+  static Setter get colResize => style('cursor', 'col-resize');
+  static Setter get rowResize => style('cursor', 'row-resize');
+  static Setter get allScroll => style('cursor', 'all-scroll');
+  static Setter get zoomIn => style('cursor', 'zoom-in');
+  static Setter get zoomOut => style('cursor', 'zoom-out');
+  static Setter get grab => style('cursor', 'grab');
+  static Setter get grabbing => style('cursor', 'grabbing');
 }
