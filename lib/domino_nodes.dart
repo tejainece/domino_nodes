@@ -3,9 +3,9 @@ export 'elements/elements.dart';
 export 'events/events.dart';
 export 'styles/styles.dart';
 export 'package:domino/domino.dart';
-export 'package:domino/helpers.dart' show BoolFunction, clazzIf;
+export 'package:domino/helpers.dart' show clazzIf;
 
-import 'package:domino/helpers.dart' show BoolFunction;
+typedef bool Condition();
 
 List flat(children1, [c2, c3, c4, c5, c6, c7, c8]) {
   final children = [children1, c2, c3, c4, c5, c6, c7, c8];
@@ -23,13 +23,14 @@ List flat(children1, [c2, c3, c4, c5, c6, c7, c8]) {
   return ret;
 }
 
-dynamic when(/* bool | BoolFunction */ condition, result) {
-  if (condition is BoolFunction) condition = condition();
+dynamic when(/* bool | Condition */ condition, then, [orElse]) {
+  if (condition is Condition) condition = condition();
   if (condition) {
-    if (result is Function) return result();
-    return result;
+    if (then is Function) return then();
+    return then;
   }
-  return null;
+  if (orElse is Function) return orElse();
+  return orElse;
 }
 
 List foreach<E>(List<E> list, build(E e)) => list.map(build).toList();

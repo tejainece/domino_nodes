@@ -12,7 +12,7 @@ Element textInput([content]) =>
     new Element('input', (content ?? [])..add(attr('type', 'text')));
 
 /// Creates a <span> Element.
-Element textInputWhen(/* bool | BoolFunction */ condition, [content]) =>
+Element textInputWhen(/* bool | Condition */ condition, [content]) =>
     new Element('input', (content ?? [])..add(attr('type', 'text')));
 
 /// Creates a <span> Element.

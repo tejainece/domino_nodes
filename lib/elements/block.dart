@@ -1,9 +1,9 @@
 part of domino.nodes.elements;
 
 /// Creates a <div> Element.
-Element elementWhen(/* bool | BoolFunction */ condition, String tag,
+Element elementWhen(/* bool | Condition */ condition, String tag,
     [content]) {
-  if (condition is BoolFunction) condition = condition();
+  if (condition is Condition) condition = condition();
   return condition ? new Element(tag, content) : null;
 }
 
@@ -11,7 +11,7 @@ Element elementWhen(/* bool | BoolFunction */ condition, String tag,
 Element div([content]) => new Element('div', content);
 
 /// Creates a <div> Element.
-Element divWhen(/* bool | BoolFunction */ condition, [content]) =>
+Element divWhen(/* bool | Condition */ condition, [content]) =>
     elementWhen(condition, 'div', content);
 
 /// Creates a <p> Element.
