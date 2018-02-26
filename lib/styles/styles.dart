@@ -6,6 +6,8 @@ Setter bgColor(String color) => style('background-color', color);
 
 Setter color(String color) => style('color', color);
 
+Setter bgImage(String image) => style('background-image', image);
+
 Setter fontSize(int size, [String unit = 'px']) =>
     style('font-size', '$size$unit');
 
