@@ -17,6 +17,10 @@ Setter width(int size, [String unit = 'px']) => style('width', '$size$unit');
 
 Setter height(int size, [String unit = 'px']) => style('height', '$size$unit');
 
+Setter left(int size, [String unit = 'px']) => style('left', '$size$unit');
+
+Setter top(int size, [String unit = 'px']) => style('top', '$size$unit');
+
 Setter margin(String value) => style('margin', value);
 
 Setter padding(String value) => style('padding', value);
