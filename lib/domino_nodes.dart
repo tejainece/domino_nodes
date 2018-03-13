@@ -32,5 +32,3 @@ dynamic when(/* bool | Condition */ condition, then, [orElse]) {
   if (orElse is Function) return orElse();
   return orElse;
 }
-
-List foreach<E>(List<E> list, build(E e)) => list.map(build).toList();

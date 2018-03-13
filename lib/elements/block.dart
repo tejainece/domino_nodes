@@ -1,8 +1,7 @@
 part of domino.nodes.elements;
 
 /// Creates a <div> Element.
-Element elementWhen(/* bool | Condition */ condition, String tag,
-    [content]) {
+Element elementWhen(/* bool | Condition */ condition, String tag, [content]) {
   if (condition is Condition) condition = condition();
   return condition ? new Element(tag, content) : null;
 }
