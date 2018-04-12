@@ -8,15 +8,26 @@ part 'headings.dart';
 part 'text_formatting.dart';
 
 /// Creates a <span> Element.
-Element textInput([content]) =>
-    new Element('input', (content ?? [])..add(attr('type', 'text')));
+Element textInput(
+        [content, content1, content2, content3, content4, content5]) =>
+    new Element('input', [
+      attr('type', 'text'),
+      content,
+      content1,
+      content2,
+      content3,
+      content4,
+      content5
+    ]);
 
 /// Creates a <span> Element.
 Element textInputWhen(/* bool | Condition */ condition, [content]) =>
     new Element('input', (content ?? [])..add(attr('type', 'text')));
 
 /// Creates a <span> Element.
-Element span([content]) => new Element('span', content);
+Element span([content, content1, content2, content3, content4, content5]) =>
+    new Element(
+        'span', [content, content1, content2, content3, content4, content5]);
 
 /// Creates a <a> Element.
 Element a({
@@ -50,7 +61,9 @@ Element img({
     );
 
 /// Creates a <button> Element.
-Element button([content]) => new Element('div', content);
+Element button([content, content1, content2, content3, content4, content5]) =>
+    new Element(
+        'div', [content, content1, content2, content3, content4, content5]);
 
 Element br([content]) => new Element('br', content);
 

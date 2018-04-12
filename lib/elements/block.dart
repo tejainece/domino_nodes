@@ -7,7 +7,9 @@ Element elementWhen(/* bool | Condition */ condition, String tag, [content]) {
 }
 
 /// Creates a <div> Element.
-Element div([content]) => new Element('div', content);
+Element div([content, content1, content2, content3, content4, content5]) =>
+    new Element(
+        'div', [content, content1, content2, content3, content4, content5]);
 
 /// Creates a <div> Element.
 Element divWhen(/* bool | Condition */ condition, [content]) =>
